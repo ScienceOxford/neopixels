@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Neopixels</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto Condensed:100,300,400,500,700,900" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header>
+    <a href="https://scienceoxford.com" target="_blank"><img src=".\images\so_logo.png" alt="Science Oxford Logo" width="400px" height="auto"></a>
+    <h1>Neopixels</h1>
+    <h5>How to code Neopixels for a BBC micro:bit using MicroPython!</h5>
+    <br>
+  </header>
+
+  <div id="microbit" class="left">
+    <h3>What is a BBC micro:bit?</h3>
+    <p>A micro:bit is a <em>microcontroller</em> - a tiny computer that you can program to do all sorts of cool stuff.</p>
+    <figure>
+      <img src="https://raw.githubusercontent.com/microbit-foundation/microbit-svg/master/microbit-drawing-blue.png"
+      alt="global goals grid" width="600px" height="auto">
+      <figcaption>Picture by the <a href="https://github.com/microbit-foundation/microbit-svg" target="_blank">micro:bit Educational Foundation</a>, <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC4.0 BY-NC-SA</a>.</figcaption>
+    </figure>
+    <p>It has loads of built-in features, such as an LED display, an accelerometer and a radio chip!</p>
+    <p>For more information about what the micro:bit can do, <a href="https://microbit.org/guide/features/" target="_blank">click here</a>.</p>
+    <br>
+  </div>
+
+  <div id="starter" class="left">
+    <h3>Creating your first program</h3>
+    <p>Our preferred editor is <a href="https://codewith.mu/" target="_blank">Mu</a>, which is installed on our laptops - click the red snake icon from the taskbar!</p>
+    <p>You can also use the <a href="https://python.microbit.org/v/2.0" target="_blank">online editor</a>, which is very similar, but our instructions below assume you are using Mu.</p>
+    <p><strong>Add the following code</strong> into your editor (replacing any that is already there):</p>
+    <pre>from microbit import *
+import neopixel
+
+display.show(Image.HAPPY)
+sleep(1000)
+display.scroll('Hello')</pre>
+    <ul>
+      <li><code>import</code> adds necessary <em>libraries</em> to your code. In this case <code>microbit</code> (needed now) and <code>neopixel</code> (needed later).</li>
+      <li><code>display</code> does things with the micro:bit's screen.</li>
+      <li><code>sleep</code> adds a pause into your code - it will wait for the give amount of time before moving on to the next statement.</li>
+    </ul>
+    <br>
+    <p><strong>Connect your micro:bit</strong> to your computer, and <strong>click Flash</strong> to send your code to your micro:bit.</p>
+    <p><strong>Does the code run on your micro:bit?</strong></p>
+    <ul>
+      <li>If your computer is showing a warning that it did not flash correctly - unplug your micro:bit, plug it in again, and try clicking Flash again!</li>
+      <li>If you are getting an unexpected scrolling message on the micro:bit, this is an error message! Look carefully at your code and check for typing mistakes (spelling matters, as do CAPITAL letters!).</li>
+    </ul>
+    <p><strong>Change the code!</strong> Try other images and changing the message. How about adding more than one image?</p>
+    <br>
+  </div>
+
+  <div id="neopixels" class="left">
+    <h3>Setting up the Neopixels</h3>
+    <p>Neopixels is a brand name for 'addressable RGB LEDs'. You can connect lots of them in a strings, and program them individually, or as a group.</p>
+    <p>
+    <p>Add the following code <strong>below</strong> your current code, to set up the Neopixels:</p>
+    <pre>lights = neopixel.NeoPixel(pin16, 8)
+
+red = (50, 0, 0)
+orange = (50, 25, 0)
+yellow = (40, 50, 0)
+green = (0, 50, 0)
+blue = (0, 0, 50)
+indigo = (50, 0, 25)
+violet = (50, 0, 50)
+white = (50, 50, 50)
+
+colours = [red, orange, yellow, green, blue, indigo, violet, white]</pre>
+    <ul>
+      <li><code>lights</code> creates a <em>variable</em> to set up the Neopixels. It uses the <em>pin</em> on the micro:bit that you have physically attached the Neopixels to (<code>pin16</code>), and the number of Neopixels you have in the set (<code>8</code>).</li>
+      <li><code>red</code> sets a <em>variable</em> to the RGB colour value that will make the colour red.</li>
+      <li><code>colours</code> creates a <em>list</em> of all of the different colour variables defined above.</li>
+    </ul>
+    <br>
+  </div>
+
+  <footer class="links">
+    <a href="https://github.com/ScienceOxford/neopixels" target="_blank">View on GitHub</a>
+  </footer>
+
+</body>
+</html>
